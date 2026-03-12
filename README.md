@@ -106,10 +106,58 @@ Scikit-learn
 Seaborn  
 Matplotlib  
 
----
+## Model Selection and Conclusion
 
-# Future Improvements
+To predict employee attrition, multiple machine learning models were trained and evaluated:
 
-- Build API using Flask
-- Deploy model
-- Create HR dashboard
+- Logistic Regression
+- K-Nearest Neighbors (KNN)
+- Decision Tree
+- Random Forest
+- Tuned Random Forest (using GridSearchCV)
+
+The models were evaluated using the following classification metrics:
+
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- ROC-AUC
+
+### Model Comparison
+
+| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
+|------|------|------|------|------|------|
+| Logistic Regression | **0.86** | **0.60** | 0.36 | **0.45** | **0.81** |
+| KNN | 0.84 | 0.57 | 0.08 | 0.15 | 0.62 |
+| Decision Tree | 0.76 | 0.31 | 0.40 | 0.35 | 0.62 |
+| Random Forest | 0.84 | 0.50 | 0.08 | 0.14 | 0.79 |
+| Tuned Random Forest | 0.83 | 0.47 | 0.29 | 0.36 | 0.76 |
+
+### Key Observations
+
+- **Logistic Regression achieved the best overall performance** across Accuracy, F1 Score, and ROC-AUC.
+- **KNN and Random Forest showed very low recall**, meaning they struggled to correctly identify employees likely to leave.
+- **Decision Tree showed signs of overfitting**, with weaker generalization performance.
+- Random Forest was tuned using **GridSearchCV**, but the tuned model still did not outperform Logistic Regression.
+
+### Final Model Selection
+
+Based on the evaluation results, **Logistic Regression was selected as the final model**.
+
+Reasons for selection:
+
+- Highest overall predictive performance
+- Better balance between precision and recall
+- Strong ROC-AUC score indicating good classification capability
+- Simpler and more interpretable model compared to complex ensemble methods
+
+### Conclusion
+
+The results suggest that the relationship between employee attributes and attrition in this dataset can be effectively captured by a **linear classification model**. Logistic Regression demonstrated the best balance between predictive performance and model simplicity, making it the most suitable model for this problem.
+
+# Business Insights (Markdown)***
+• Employees working overtime show significantly higher attrition  
+• Lower salary employees tend to leave more often  
+• Employees in early career stages show higher turnover  
+• Low job satisfaction strongly correlates with attrition
