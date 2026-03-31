@@ -52,19 +52,6 @@ Target variable: Attrition
 
 ---
 
-# Model Performance
-
-| Model | Accuracy | Recall | ROC-AUC |
-|------|------|------|------|
-| Logistic Regression | 0.82 | 0.64 | 0.84 |
-| KNN | 0.80 | 0.60 | 0.82 |
-| Decision Tree | 0.83 | 0.67 | 0.85 |
-| Random Forest | **0.86** | **0.72** | **0.89** |
-
-Final model: Random Forest (tuned)
-
----
-
 # ROC Curve
 
 ![ROC Curve](images/roc_curve.png)
